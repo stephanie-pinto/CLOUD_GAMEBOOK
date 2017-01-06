@@ -23,7 +23,6 @@ public class Game {
     private String team_res ;
     private String team_ext ;
     private String quantity ;
-    private String statut;
     //private String stade ;
 
     public Long getId() {
@@ -77,14 +76,6 @@ public class Game {
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
-    }
-
-    public String getStatut() {
-        return statut;
-    }
-
-    public void setStatut(String statut) {
-        this.statut = statut;
     }
 /*
     public String getStade() {
