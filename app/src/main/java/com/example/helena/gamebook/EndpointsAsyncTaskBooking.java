@@ -83,9 +83,8 @@ class EndpointsAsyncTaskBooking extends AsyncTask<Void, Void, List<Booking>> {
     protected void onPostExecute(List<Booking> result){
 
         if(result != null) {
-            for (Booking user : result) {
+            for (Booking booking : result) {
                 Log.i(TAG, "ID BOOKING: " + booking.getId());
-
             }
         }
     }

@@ -175,11 +175,21 @@ public class NewBooking extends AppCompatActivity {
 
         bds.createBooking(booking);
 
-        new EndpointsAsyncTaskBooking().execute();
+        //cast du Integer en Long
+        Long y = new Long(x);
+
+        com.example.helena.myapplication.backend.bookingApi.model.Booking bookingBackend = new com.example.helena.myapplication.backend.bookingApi.model.Booking();
+        bookingBackend.setId(y);
+        bookingBackend.setNumSeat(idSeat.getText().toString());
+        //ne prend pas le bon game --> il doit prendre le game du backend et pas du local db
+        //bookingBackend.setGame(game1);
+
+        new EndpointsAsyncTaskBooking(bookingBackend).execute();
 
         Intent toTheMatch = new Intent(this,MatchList.class);
         toTheMatch.putExtra("idCustomer", idCustomer);
         //toTheMatch.putExtra("idBooking", idBooking1);
         startActivity(toTheMatch);
+
     }
 }

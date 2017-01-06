@@ -177,6 +177,16 @@ public class NewMatch extends AppCompatActivity {
             GameDataSource gds = new GameDataSource(context);
             gds.createGame(game);
 
+            com.example.helena.myapplication.backend.gameApi.model.Game gameBackend = new com.example.helena.myapplication.backend.gameApi.model.Game();
+            gameBackend.setDate(Date.getText().toString());
+            gameBackend.setHeure(Heure.getText().toString());
+            gameBackend.setTeamRes(Resident.getText().toString());
+            gameBackend.setTeamExt(Visiteur.getText().toString());
+            gameBackend.setQuantity(Quantite.getText().toString());
+
+            new EndpointsAsyncTaskGame(gameBackend).execute();
+
+
             Intent toListMatch = new Intent(this,MatchList.class);
             toListMatch.putExtra("idGame", idGame);
             toListMatch.putExtra("idCustomer", idCustomer);
