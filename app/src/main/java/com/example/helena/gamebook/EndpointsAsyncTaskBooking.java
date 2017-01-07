@@ -27,6 +27,7 @@ import java.util.List;
 /**
  * Created by Helena on 03.01.2017.
  */
+//test
 
 class EndpointsAsyncTaskBooking extends AsyncTask<Void, Void, List<Booking>> {
     private Booking booking;
