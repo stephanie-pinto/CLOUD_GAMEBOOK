@@ -95,6 +95,16 @@ public class EditBooking extends AppCompatActivity {
 
         //bds.updateBooking(booking);
 
+        //Update cloud
+        com.example.helena.myapplication.backend.bookingApi.model.Booking bookingBackend = new com.example.helena.myapplication.backend.bookingApi.model.Booking();
+        bookingBackend.setId(Long.valueOf(booking.getId()));
+        bookingBackend.setNumSeat(booking.getNum_seat());
+        //ne prend pas le bon game --> il doit prendre le game du backend et pas du local db
+        //bookingBackend.setGame(game2).toString();
+
+
+        new EndpointsAsyncTaskBookingUpdate(bookingBackend).execute();
+
         Intent toListMatch = new Intent(this,ListOfBooking.class);
             toListMatch.putExtra("idCustomer", idCustomer);
             toListMatch.putExtra("idBooking", idBooking);
