@@ -191,6 +191,7 @@ public class NewBooking extends AppCompatActivity {
 
         new EndpointsAsyncTaskBooking(bookingBackend).execute();
 
+
         Intent toTheMatch = new Intent(this,MatchList.class);
         toTheMatch.putExtra("idCustomer", idCustomer);
         //toTheMatch.putExtra("idBooking", idBooking1);
