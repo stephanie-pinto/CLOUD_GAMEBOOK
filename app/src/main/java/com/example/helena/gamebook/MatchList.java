@@ -15,13 +15,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.helena.gamebook.db.SQLiteHelper;
 import com.example.helena.gamebook.db.adapter.GameAdapter;
 import com.example.helena.gamebook.db.adapter.GameDataSource;
 import com.example.helena.gamebook.db.object.Game;
+import com.example.helena.myapplication.backend.gameApi.GameApi;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.AdapterView;
@@ -40,6 +43,9 @@ public class MatchList extends AppCompatActivity {
     SQLiteHelper helper;
     Integer idCustomer;
     Bundle bundle;
+
+    private static GameApi gameApi = null;
+    List<com.example.helena.myapplication.backend.gameApi.model.Game> gameListApi;
 
 
     @Override
@@ -68,10 +74,20 @@ public class MatchList extends AppCompatActivity {
 
                 gameList = (ListView)findViewById(R.id.Games_List);
                 games = new ArrayList<Game>();
-                games = gds.getAllGames();
+                //games = gds.getAllGames();
 
-                GameAdapter gameAdapter = new GameAdapter(context, games);
-                gameList.setAdapter(gameAdapter);
+                //GameAdapter gameAdapter = new GameAdapter(context, games);
+                //gameList.setAdapter(gameAdapter);
+
+
+                try {
+                    gameListApi = new ArrayList<com.example.helena.myapplication.backend.gameApi.model.Game>();
+                    gameListApi = gameApi.list().execute().getItems();
+                    gameList.setAdapter((ListAdapter) gameListApi);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
 
                 gameList.setOnItemClickListener(new AdapterView.OnItemClickListener()
                 {

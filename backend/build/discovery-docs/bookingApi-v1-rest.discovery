@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/v6Ixa1QG0QtNLflg9B5IhPBVNCc\"",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/3eH5Y8vpTfUVDidZyScZF692Qrw\"",
  "discoveryVersion": "v1",
  "id": "bookingApi:v1",
  "name": "bookingApi",
@@ -119,9 +119,6 @@
      "format": "int64"
     },
     "quantity": {
-     "type": "string"
-    },
-    "statut": {
      "type": "string"
     },
     "team_ext": {

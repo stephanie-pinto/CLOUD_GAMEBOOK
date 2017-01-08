@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/GZ52xzuhbdQklwMMTcTmu2nFmNY\"",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/Go78cp08iRSJ5D1L1hbxEYuIwiU\"",
  "discoveryVersion": "v1",
  "id": "gameApi:v1",
  "name": "gameApi",
@@ -103,9 +103,6 @@
     "quantity": {
      "type": "string"
     },
-    "statut": {
-     "type": "string"
-    },
     "team_ext": {
      "type": "string"
     },
@@ -192,9 +189,6 @@
      "format": "int64"
     },
     "quantity": {
-     "type": "string"
-    },
-    "statut": {
      "type": "string"
     },
     "team_ext": {
