@@ -1,0 +1,264 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/JHrkJ13echhvz5XdPIaM0KtfaaQ\"",
+ "discoveryVersion": "v1",
+ "id": "bookingApi:v1",
+ "name": "bookingApi",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "backend.myapplication.Helena.example.com",
+ "ownerName": "backend.myapplication.Helena.example.com",
+ "icons": {
+  "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
+  "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://cloud-08012017.appspot.com/_ah/api/bookingApi/v1/",
+ "basePath": "/_ah/api/bookingApi/v1/",
+ "rootUrl": "https://cloud-08012017.appspot.com/_ah/api/",
+ "servicePath": "bookingApi/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "Booking": {
+   "id": "Booking",
+   "type": "object",
+   "properties": {
+    "game": {
+     "$ref": "Game"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "num_seat": {
+     "type": "string"
+    }
+   }
+  },
+  "CollectionResponse_Booking": {
+   "id": "CollectionResponse_Booking",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Booking"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "Game": {
+   "id": "Game",
+   "type": "object",
+   "properties": {
+    "date": {
+     "type": "string"
+    },
+    "heure": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "quantity": {
+     "type": "string"
+    },
+    "team_ext": {
+     "type": "string"
+    },
+    "team_res": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "get": {
+   "id": "bookingApi.get",
+   "path": "booking/{_id}",
+   "httpMethod": "GET",
+   "parameters": {
+    "_id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "_id"
+   ],
+   "response": {
+    "$ref": "Booking"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "insert": {
+   "id": "bookingApi.insert",
+   "path": "booking",
+   "httpMethod": "POST",
+   "request": {
+    "$ref": "Booking",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Booking"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "list": {
+   "id": "bookingApi.list",
+   "path": "booking",
+   "httpMethod": "GET",
+   "parameters": {
+    "cursor": {
+     "type": "string",
+     "location": "query"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32",
+     "location": "query"
+    }
+   },
+   "response": {
+    "$ref": "CollectionResponse_Booking"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "patch": {
+   "id": "bookingApi.patch",
+   "path": "booking/{_id}",
+   "httpMethod": "PATCH",
+   "parameters": {
+    "_id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "_id"
+   ],
+   "request": {
+    "$ref": "Booking"
+   },
+   "response": {
+    "$ref": "Booking"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "remove": {
+   "id": "bookingApi.remove",
+   "path": "booking/{_id}",
+   "httpMethod": "DELETE",
+   "parameters": {
+    "_id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "_id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "update": {
+   "id": "bookingApi.update",
+   "path": "booking/{_id}",
+   "httpMethod": "PUT",
+   "parameters": {
+    "_id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "path"
+    }
+   },
+   "parameterOrder": [
+    "_id"
+   ],
+   "request": {
+    "$ref": "Booking",
+    "parameterName": "resource"
+   },
+   "response": {
+    "$ref": "Booking"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

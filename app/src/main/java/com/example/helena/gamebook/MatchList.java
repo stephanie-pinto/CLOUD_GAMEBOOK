@@ -74,12 +74,12 @@ public class MatchList extends AppCompatActivity {
 
                 gameList = (ListView)findViewById(R.id.Games_List);
                 games = new ArrayList<Game>();
-                //games = gds.getAllGames();
+                games = gds.getAllGames();
 
-                //GameAdapter gameAdapter = new GameAdapter(context, games);
-                //gameList.setAdapter(gameAdapter);
+                GameAdapter gameAdapter = new GameAdapter(context, games);
+                gameList.setAdapter(gameAdapter);
 
-
+/*
                 try {
                     gameListApi = new ArrayList<com.example.helena.myapplication.backend.gameApi.model.Game>();
                     gameListApi = gameApi.list().execute().getItems();
@@ -87,7 +87,7 @@ public class MatchList extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
+*/
 
                 gameList.setOnItemClickListener(new AdapterView.OnItemClickListener()
                 {
