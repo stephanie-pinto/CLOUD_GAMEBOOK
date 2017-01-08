@@ -103,7 +103,7 @@ public class EditBooking extends AppCompatActivity {
         //bookingBackend.setGame(game2).toString();
 
 
-        new EndpointsAsyncTaskBookingUpdate(bookingBackend).execute();
+        new EndpointsAsyncTaskBooking(bookingBackend).execute();
 
         Intent toListMatch = new Intent(this,ListOfBooking.class);
             toListMatch.putExtra("idCustomer", idCustomer);

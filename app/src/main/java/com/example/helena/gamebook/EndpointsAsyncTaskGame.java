@@ -3,12 +3,11 @@ package com.example.helena.gamebook;
 import android.os.AsyncTask;
 import android.util.Log;
 
+
 import com.example.helena.myapplication.backend.gameApi.GameApi;
 import com.example.helena.myapplication.backend.gameApi.model.Game;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,9 +18,10 @@ import java.util.List;
  */
 
 public class EndpointsAsyncTaskGame extends AsyncTask<Void, Void, List<Game>> {
-    private static GameApi gameApi = null;
-    private static final String TAG = EndpointsAsyncTaskGame.class.getName();
     private Game game;
+    private static final String TAG = EndpointsAsyncTaskGame.class.getName();
+    private static GameApi gameApi = null;
+
 
     EndpointsAsyncTaskGame(){}
 
@@ -41,7 +41,7 @@ public class EndpointsAsyncTaskGame extends AsyncTask<Void, Void, List<Game>> {
                     // - turn off compression when running against local devappserver
                     // if you deploy on the cloud backend, use your app name
                     // such as https://<your-app-id>.appspot.com
-                    .setRootUrl("https://cloud-08012017.appspot.com/_ah/api/");
+                    .setRootUrl("https://cloud-04012017.appspot.com/_ah/api/");
             gameApi = builder.build();
         }
 

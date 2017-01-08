@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.helena.gamebook.db.SQLiteHelper;
 import com.example.helena.gamebook.db.adapter.CustomerDataSource;
 import com.example.helena.gamebook.db.object.Customer;
+import com.example.helena.myapplication.backend.customer1Api.model.Customer1;
 
 
 /**
@@ -98,6 +99,20 @@ public class Register extends AppCompatActivity {
 
                 CustomerDataSource cds = new CustomerDataSource(context);
                 cds.createCustomer(customer);
+
+
+                Customer1 customer1backend = new Customer1();
+
+                customer1backend.setNom(Nom.getText().toString());
+                customer1backend.setNom(Prenom.getText().toString());
+                customer1backend.setNom(Email.getText().toString());
+                customer1backend.setMdp(Mdp.getText().toString());
+
+                new EndpointsAsyncTaskCustomer(customer1backend).execute();
+
+
+
+
 
                 Intent intent = new Intent(Register.this, MainActivity.class);
                 startActivity(intent);

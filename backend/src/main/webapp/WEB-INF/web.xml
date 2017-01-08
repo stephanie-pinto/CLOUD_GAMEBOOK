@@ -15,7 +15,8 @@
             <param-name>services</param-name>
             <param-value>com.example.Helena.myapplication.backend.MyEndpoint,
                 com.example.Helena.myapplication.backend.BookingEndpoint,
-                com.example.Helena.myapplication.backend.GameEndpoint</param-value>
+                com.example.Helena.myapplication.backend.GameEndpoint,
+                com.example.Helena.myapplication.backend.Customer1Endpoint</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
