@@ -41,7 +41,7 @@ public class EndpointsAsyncTaskGame extends AsyncTask<Void, Void, List<Game>> {
                     // - turn off compression when running against local devappserver
                     // if you deploy on the cloud backend, use your app name
                     // such as https://<your-app-id>.appspot.com
-                    .setRootUrl("https://cloud-04012017.appspot.com/_ah/api/");
+                    .setRootUrl("https://cloud-08012017.appspot.com/_ah/api/");
             gameApi = builder.build();
         }
 
