@@ -21,11 +21,22 @@ public class Game {
     private String quantity ;
     private String statut;
 
-    public Game(){
 
-    }
+    //emty constructor
+    public Game(){    }
+
+    //constructor with parameters
     public Game(int id, String date, String heure, String resident, String visiteur, String quantite) {
+        this._id = id;
+        this.date = date;
+        this.heure = heure;
+        this.team_res = resident;
+        this.team_ext = visiteur;
+        this.quantity = quantite;
     }
+
+
+
     //private String stade ;
 
     public int getId() {

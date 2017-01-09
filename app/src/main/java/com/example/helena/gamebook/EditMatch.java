@@ -92,6 +92,7 @@ public class EditMatch extends AppCompatActivity  {
             idResident.setText(game.getTeam_res());
             idVisiteur.setText(game.getTeam_ext());
             idQuantite.setText(game.getQuantity());
+
     }
 
     // sélection menu adéquat
@@ -133,6 +134,7 @@ public class EditMatch extends AppCompatActivity  {
 
         GameDataSource gds = new GameDataSource(context);
 
+        gds.updateGame(game);
         //bug
         Game gameUpdate = new Game(id,date,heure,resident,visiteur,quantite);
         gds.updateGame(gameUpdate);
