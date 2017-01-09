@@ -48,7 +48,7 @@ public class EndpointsAsyncTaskCustomer extends AsyncTask<Void, Void, List<Custo
             // For instance insert
             if(customer1 != null){
                 customer1Api.insert(customer1).execute();
-                Log.i(TAG, "insert game");
+                Log.i(TAG, "insert customer");
             }
             // and for instance return the list of all employees
             return customer1Api.list().execute().getItems();
@@ -66,7 +66,7 @@ public class EndpointsAsyncTaskCustomer extends AsyncTask<Void, Void, List<Custo
 
         if(result != null) {
             for (Customer1 customer1 : result) {
-                Log.i(TAG, "Prenom: " + customer1.getPrenom() + " / Nom : "+ customer1.getNom() );
+                Log.i(TAG, "CUSTOMER : Prenom: " + customer1.getPrenom() + " / Nom : "+ customer1.getNom() );
             }
         }
     }

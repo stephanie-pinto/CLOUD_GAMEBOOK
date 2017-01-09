@@ -81,7 +81,7 @@ public class BookingEndpoint {
         //
         // If your client provides the ID then you should probably use PUT instead.
         ofy().save().entity(booking).now();
-        logger.info("Created Booking with ID :" + booking.getId());
+        logger.info("Created Booking.");
 
         return ofy().load().entity(booking).now();
     }
@@ -103,7 +103,7 @@ public class BookingEndpoint {
         // TODO: You should validate your ID parameter against your resource's ID here.
         checkExists(_id);
         ofy().save().entity(booking).now();
-        logger.info("Updated Booking with ID : " + booking.getId() + booking);
+        logger.info("Updated Booking: " + booking);
         return ofy().load().entity(booking).now();
     }
 
