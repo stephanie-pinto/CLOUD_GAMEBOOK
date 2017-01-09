@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/JHrkJ13echhvz5XdPIaM0KtfaaQ\"",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/3eH5Y8vpTfUVDidZyScZF692Qrw\"",
  "discoveryVersion": "v1",
  "id": "bookingApi:v1",
  "name": "bookingApi",
@@ -13,9 +13,9 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rest",
- "baseUrl": "https://cloud-08012017.appspot.com/_ah/api/bookingApi/v1/",
+ "baseUrl": "https://cloud-04012017.appspot.com/_ah/api/bookingApi/v1/",
  "basePath": "/_ah/api/bookingApi/v1/",
- "rootUrl": "https://cloud-08012017.appspot.com/_ah/api/",
+ "rootUrl": "https://cloud-04012017.appspot.com/_ah/api/",
  "servicePath": "bookingApi/v1/",
  "batchPath": "batch",
  "parameters": {

@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/JHrkJ13echhvz5XdPIaM0KtfaaQ\"",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/3eH5Y8vpTfUVDidZyScZF692Qrw\"",
  "discoveryVersion": "v1",
  "id": "bookingApi:v1",
  "name": "bookingApi",
@@ -13,8 +13,8 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rpc",
- "rootUrl": "https://cloud-08012017.appspot.com/_ah/api/",
- "rpcUrl": "https://cloud-08012017.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://cloud-04012017.appspot.com/_ah/api/",
+ "rpcUrl": "https://cloud-04012017.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {

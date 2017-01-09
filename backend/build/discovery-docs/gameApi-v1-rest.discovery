@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/JmLeplN3V32WfFuDdz6ES0rZ6Gg\"",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/Go78cp08iRSJ5D1L1hbxEYuIwiU\"",
  "discoveryVersion": "v1",
  "id": "gameApi:v1",
  "name": "gameApi",
@@ -13,9 +13,9 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rest",
- "baseUrl": "https://cloud-08012017.appspot.com/_ah/api/gameApi/v1/",
+ "baseUrl": "https://cloud-04012017.appspot.com/_ah/api/gameApi/v1/",
  "basePath": "/_ah/api/gameApi/v1/",
- "rootUrl": "https://cloud-08012017.appspot.com/_ah/api/",
+ "rootUrl": "https://cloud-04012017.appspot.com/_ah/api/",
  "servicePath": "gameApi/v1/",
  "batchPath": "batch",
  "parameters": {

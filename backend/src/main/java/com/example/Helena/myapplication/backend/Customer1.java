@@ -15,7 +15,7 @@ public class Customer1 {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long _id ;
+    private java.lang.Long _id ;
 
     private String nom ;
     private String prenom ;

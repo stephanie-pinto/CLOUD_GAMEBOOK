@@ -104,8 +104,8 @@ public class Register extends AppCompatActivity {
                 Customer1 customer1backend = new Customer1();
 
                 customer1backend.setNom(Nom.getText().toString());
-                customer1backend.setNom(Prenom.getText().toString());
-                customer1backend.setNom(Email.getText().toString());
+                customer1backend.setPrenom(Prenom.getText().toString());
+                customer1backend.setEmail(Email.getText().toString());
                 customer1backend.setMdp(Mdp.getText().toString());
 
                 new EndpointsAsyncTaskCustomer(customer1backend).execute();
