@@ -20,6 +20,12 @@ public class Game {
     private String team_ext ;
     private String quantity ;
     private String statut;
+
+    public Game(){
+
+    }
+    public Game(int id, String date, String heure, String resident, String visiteur, String quantite) {
+    }
     //private String stade ;
 
     public int getId() {
