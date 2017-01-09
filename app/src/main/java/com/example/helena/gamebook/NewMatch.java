@@ -174,6 +174,7 @@ public class NewMatch extends AppCompatActivity {
             game.setTeam_ext(Visiteur.getText().toString());
             game.setQuantity(Quantite.getText().toString());
 
+
             GameDataSource gds = new GameDataSource(context);
             gds.createGame(game);
 

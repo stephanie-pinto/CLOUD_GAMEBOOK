@@ -92,7 +92,6 @@ public class EditMatch extends AppCompatActivity  {
             idResident.setText(game.getTeam_res());
             idVisiteur.setText(game.getTeam_ext());
             idQuantite.setText(game.getQuantity());
-
     }
 
     // sélection menu adéquat
@@ -121,12 +120,33 @@ public class EditMatch extends AppCompatActivity  {
         game.setHeure(Heure.getText().toString());
         game.setTeam_res(Resident.getText().toString());
         game.setTeam_ext(Visiteur.getText().toString());
-
         game.setQuantity(Quantite.getText().toString());
+
+
+        //CLOUD
+        int id = game.getId();
+        String date = Date.getText().toString();
+        String heure = Heure.getText().toString() ;
+        String resident = Resident.getText().toString();
+        String visiteur = Visiteur.getText().toString();
+        String quantite = Quantite.getText().toString();
 
         GameDataSource gds = new GameDataSource(context);
 
-        gds.updateGame(game);
+        //bug
+        Game gameUpdate = new Game(id,date,heure,resident,visiteur,quantite);
+        gds.updateGame(gameUpdate);
+
+        //Update cloud
+        com.example.helena.myapplication.backend.gameApi.model.Game game2= new com.example.helena.myapplication.backend.gameApi.model.Game();
+        game2.setId(Long.valueOf(gameUpdate.getId()));
+        game2.setDate(gameUpdate.getDate());
+        game2.setHeure(gameUpdate.getHeure());
+        game2.setTeamRes(gameUpdate.getTeam_res());
+        game2.setTeamExt(gameUpdate.getTeam_ext());
+        game2.setQuantity(gameUpdate.getQuantity());
+
+        new EndpointsAsyncTaskGameUpdate(game2).execute();
 
         Intent toListMatch = new Intent(this,MatchList.class);
         toListMatch.putExtra("idGame", idGame);
