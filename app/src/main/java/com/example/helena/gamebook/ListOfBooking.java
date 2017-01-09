@@ -30,7 +30,7 @@ public class ListOfBooking extends AppCompatActivity {
     SQLiteHelper helper;
     private ListView bookingList;
     Booking booking;
-    //test- than delete
+    //test- than deletes
     List<Booking> bookings;
     Integer idCustomer;
     Bundle bundle;

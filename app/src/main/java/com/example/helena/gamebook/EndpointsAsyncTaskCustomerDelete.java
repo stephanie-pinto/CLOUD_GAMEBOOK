@@ -55,7 +55,7 @@ public class EndpointsAsyncTaskCustomerDelete extends AsyncTask<Object, Object, 
                     customer1Api.remove(customer1.getId()).execute();
                     Log.i(TAG, "delete customer : "+ customer1.getId());
                 }
-                // and for instance return the list of all customers
+                // and for instance return the list of all customerss
                 return customer1Api.list().execute().getItems();
 
             } catch (IOException e){

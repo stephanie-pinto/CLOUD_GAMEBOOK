@@ -60,7 +60,7 @@ public class EndpointsAsyncTaskCustomer extends AsyncTask<Void, Void, List<Custo
     }
 
     //This method gets executed on the UI thread - The UI can be manipulated directly inside
-    //of this method
+    //of this methods
     @Override
     protected void onPostExecute(List<Customer1> result){
 
