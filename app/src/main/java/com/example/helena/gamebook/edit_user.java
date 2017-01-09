@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,11 +20,16 @@ import com.example.helena.gamebook.db.adapter.CustomerDataSource;
 import com.example.helena.gamebook.db.adapter.GameDataSource;
 import com.example.helena.gamebook.db.object.Customer;
 import com.example.helena.gamebook.db.object.Game;
+import com.example.helena.myapplication.backend.customer1Api.model.Customer1;
 
 public class edit_user extends AppCompatActivity {
     Integer idCustomer ;
     Bundle bundle;
     Context context;
+    Customer customer;
+
+    private static final String TAG = edit_user.class.getName();
+
 
     EditText editName, editFirstname, editEmail, editPassword, idUser;
 
@@ -129,7 +135,7 @@ public class edit_user extends AppCompatActivity {
     // modification du customer
     private void loadCustomer() {
         CustomerDataSource cds = new CustomerDataSource(context);
-        Customer customer = new Customer();
+        customer = new Customer();
 
         customer = cds.getCustomerById(idCustomer);
 
@@ -218,6 +224,20 @@ public class edit_user extends AppCompatActivity {
                  */
                 CustomerDataSource cds = new CustomerDataSource(context);
                 cds.deleteCustomer(idCustomer);
+
+                Customer1 customer1backend = new Customer1();
+
+                customer1backend.setId(Long.valueOf(customer.getId()));
+                customer1backend.setNom(customer.getNom());
+                customer1backend.setPrenom(customer.getPrenom());
+                customer1backend.setMdp(customer.getMdp());
+                customer1backend.setEmail(customer.getEmail());
+
+                Log.i(TAG, "delete customer : NOM : " + customer.getNom() + "id : " + customer.getId());
+
+                new EndpointsAsyncTaskCustomerDelete(customer1backend).execute();
+
+
 
                 dialog.cancel();
                 Intent toMain = new Intent(edit_user.this,MainActivity.class);
